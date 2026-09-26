@@ -1,0 +1,135 @@
+.chatbot-floating-button {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+
+    height: 58px;
+    min-width: 58px;
+
+    padding: 0 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    border: none;
+    border-radius: 999px;
+
+    background: linear-gradient(135deg,
+            #6366f1,
+            #8b5cf6);
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(99, 102, 241, 0.35),
+        0 4px 12px rgba(0, 0, 0, 0.15);
+
+    z-index: 9999;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        width 0.2s ease;
+}
+
+.chatbot-floating-button:hover {
+    transform: translateY(-3px) scale(1.03);
+
+    box-shadow:
+        0 14px 35px rgba(99, 102, 241, 0.45),
+        0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+.chatbot-floating-button:active {
+    transform: scale(0.96);
+}
+
+.chatbot-icon {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.2);
+
+    font-size: 18px;
+}
+
+.chatbot-label {
+    white-space: nowrap;
+}
+
+/* Loading state */
+
+.chatbot-floating-button.loading {
+    opacity: 0.7;
+    cursor: wait;
+}
+
+/* Subtle pulse */
+
+.chatbot-floating-button::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -5px;
+
+    border-radius: inherit;
+
+    border: 2px solid rgba(99, 102, 241, 0.25);
+
+    animation: chatbotPulse 2s infinite;
+}
+
+@keyframes chatbotPulse {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.7;
+    }
+
+    70% {
+        transform: scale(1.08);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .chatbot-floating-button {
+        right: 16px;
+        bottom: 16px;
+
+        width: 56px;
+        min-width: 56px;
+        height: 56px;
+
+        padding: 0;
+    }
+
+    .chatbot-label {
+        display: none;
+    }
+
+    .chatbot-icon {
+        width: 30px;
+        height: 30px;
+    }
+}

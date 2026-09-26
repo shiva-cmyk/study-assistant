@@ -1,0 +1,42 @@
+{
+  "name": "studyflow-ai",
+  "version": "1.0.0",
+  "description": "AI-Powered Interactive Study Tool - Flam Frontend Internship Assignment",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"blue,green\" \"npm run server\" \"npm run client\"",
+    "server": "node server/server.js",
+    "client": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node test/validation.test.js && node test/viva.test.js && node test/study_room.test.js && node test/full_system.test.js",
+    "start": "node server/server.js"
+  },
+  "keywords": [
+    "react",
+    "vite",
+    "ai",
+    "gemini",
+    "flashcards",
+    "quiz",
+    "study-tool"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "lucide-react": "^1.16.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "socket.io": "^4.8.3",
+    "socket.io-client": "^4.8.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "vite": "^6.2.0"
+  }
+}
