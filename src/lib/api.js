@@ -8,7 +8,7 @@
 
 import { validateStudySet } from './validateResult';
 
-const API_ENDPOINT = '/api/generate';
+const API_ENDPOINT = `${import.meta.env.VITE_API_URL || ''}/api/generate`;
 const DEFAULT_TIMEOUT_MS = 35000; // 35 seconds safety timeout
 
 /**

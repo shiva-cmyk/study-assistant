@@ -8,8 +8,11 @@
 import { validateVivaQuestions, validateVivaEvaluation } from './validateViva';
 import { ApiError } from './api';
 
-const VIVA_GENERATE_ENDPOINT = '/api/viva/generate-questions';
-const VIVA_EVALUATE_ENDPOINT = '/api/viva/evaluate';
+const API_BASE_URL = import.meta.env.VITE_API_URL || '';
+
+const VIVA_GENERATE_ENDPOINT = `${API_BASE_URL}/api/viva/generate-questions`;
+const VIVA_EVALUATE_ENDPOINT = `${API_BASE_URL}/api/viva/evaluate`;
+
 const DEFAULT_TIMEOUT_MS = 35000;
 
 /**
