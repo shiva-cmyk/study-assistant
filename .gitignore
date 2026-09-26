@@ -27,7 +27,7 @@ Thumbs.db
 *.njsproj
 *.sln
 *.sw?
-
+README.md
 # Personal testing and interview files
 test/
 check.txt
